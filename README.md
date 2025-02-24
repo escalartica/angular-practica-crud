@@ -62,13 +62,15 @@ Desarrollar una aplicación web utilizando **Angular** con funcionalidades CRUD 
 1. **Configuración del entorno de desarrollo**:
 
    - Configurar **Prettier** para formateo automático del código.
+     \*\*Tras la configuración se podra formatear todo el código del proyecto con npm run format
    - Configurar **ESLint** para análisis estático de código.
    - Configurar **Karma** para que sea necesario un 80% de code coverage.
+   - npm run test para mostrar cobertura
    - Configurar **GitHub** para aplicar una template a la hora de realizar las pull request.
    - Configurar **Husky** para hooks pre-commit que aseguren que el código está bien formateado y cumple con las reglas establecidas.
    - Seguir el flujo de trabajo **GitFlow** para la gestión de ramas y commits.
 
-2. **Estilos**:
+1. **Estilos**:
 
    - Utilizar estilos propios o la librería de estilos **Tailwind CSS** para el diseño de la aplicación.
    - No está permitido usar librerías de componentes externos (como Material, PrimeNG, etc.).
@@ -142,7 +144,7 @@ Este token debe utilizarse en cada petición como un **Bearer Token** en la cabe
    También puedes hacerlo mediante la consola ejecutando:
 
    ```javascript
-   localStorage.setItem("auth-token", "mock-token");
+   localStorage.setItem('auth-token', 'mock-token');
    ```
 
 4. Crear una nueva rama `feature/api-integration`.
