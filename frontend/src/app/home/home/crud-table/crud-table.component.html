@@ -1,0 +1,44 @@
+<!-- crud-table.component.html -->
+<div class="crud-container">
+    <div class="header">
+      <!-- Opcional: Breadcrumb para la navegación -->
+      <nav>
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Concesionario</a></li>
+          <li>CRUD de Coches</li>
+        </ol>
+      </nav>
+  
+      <!-- Botón para crear un nuevo coche -->
+      <button routerLink="/create" class="btn btn-primary">
+        Crear Nuevo Coche
+      </button>
+    </div>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coche of coches">
+          <td><a [routerLink]="['/detail', coche.id]">{{ coche.id }}</a></td>
+          <td>{{ coche.marca }}</td>
+          <td>{{ coche.modelo }}</td>
+          <td>{{ coche.total }}</td>
+          <td>
+            <!-- Botones de acción para editar y eliminar -->
+            <button (click)="editarCoche(coche)" class="btn btn-warning">Editar</button>
+            <button (click)="eliminarCoche(coche)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
