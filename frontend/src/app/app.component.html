@@ -1,25 +1,9 @@
-<!-- app.component.html -->
+<div>
+  <header>
+    <h1>Aplicación de Gestión de Coches</h1>
+    <button mat-raised-button appButtonStyle>Agregar Coche</button>
+  </header>
 
-<div class="app-container">
-  <!-- El contenido de la ruta se cargará aquí -->
-  <!--<router-outlet></router-outlet>-->
+  <!-- Mostrar el contenido del HomeComponent directamente aquí -->
+  <app-home></app-home>  <!-- Aquí se usa el selector del componente standalone -->
 </div>
-
-<main class="main">
-  <!-- Usando la directiva appButtonStyle en un botón -->
-  <button appButtonStyle>
-    Click Me
-  </button>
-
-  <!-- Usando la directiva appButtonStyle en un enlace -->
-  <a href="#" appButtonStyle>
-    Link Style
-  </a>
-
-  <!-- app.component.html -->
-<div class="app-container">
-  <!-- El contenido de la ruta se cargará aquí -->
-  <router-outlet></router-outlet>
-</div>
-
-</main>

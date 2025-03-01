@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';  // Si usas rutas en tu componente standalone
-
-
+import { CrudTableComponent } from './home/crud-table/crud-table.component';  // Importar CrudTableComponent como standalone
+import { RouterModule } from '@angular/router';  // Importamos RouterModule aquí
+import { BreadcrumbComponent } from './home/breadcrumb/breadcrumb.component'; 
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatToolbar } from '@angular/material/toolbar';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  standalone: true,  // Esto hace que sea un componente standalone
-  imports: []  // Asegúrate de incluir módulos necesarios, como RouterModule si es necesario
+  standalone: true,  // Especificamos que es un componente standalone
+  imports: [CrudTableComponent, RouterModule, BreadcrumbComponent, MatIconModule, MatToolbar]  // Importamos CrudTableComponent aquí
 })
 export class HomeComponent {
-  // Lógica de tu componente
+  // Lógica de tu componente Home
 }
