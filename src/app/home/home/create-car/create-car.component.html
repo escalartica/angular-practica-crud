@@ -1,0 +1,20 @@
+<!-- create-car.component.html -->
+<div class="create-car">
+    <h2>Crear Coche</h2>
+    <form (ngSubmit)="crearCoche()">
+      <div>
+        <label for="marca">Marca</label>
+        <input id="marca" [(ngModel)]="coche.marca" name="marca" required>
+      </div>
+      <div>
+        <label for="modelo">Modelo</label>
+        <input id="modelo" [(ngModel)]="coche.modelo" name="modelo" required>
+      </div>
+      <div>
+        <label for="total">Precio</label>
+        <input id="total" [(ngModel)]="coche.total" name="total" type="number" required>
+      </div>
+      <button type="submit">Crear</button>
+    </form>
+  </div>
+  
