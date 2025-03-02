@@ -1,9 +1,10 @@
 <div>
   <header>
+    <app-breadcrumb></app-breadcrumb> <!-- Muestra el breadcrumb -->
     <h1>Aplicación de Gestión de Coches</h1>
-    <button mat-raised-button appButtonStyle>Agregar Coche</button>
+    <button mat-raised-button appButtonStyle [routerLink]="['/create']">Agregar Coche</button> <!-- Botón para navegar al formulario de creación -->
   </header>
 
-  <!-- Mostrar el contenido del HomeComponent directamente aquí -->
-  <app-home></app-home>  <!-- Aquí se usa el selector del componente standalone -->
+  <!-- Aquí se cargan las vistas correspondientes a las rutas -->
+  <router-outlet></router-outlet> <!-- Muestra el componente correspondiente según la ruta -->
 </div>

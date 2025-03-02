@@ -32,3 +32,6 @@ const routes: Routes = [
   exports: [RouterModule]  // Exporta RouterModule para que se pueda usar en toda la aplicación
 })
 export class AppRoutingModule {}
+
+
+//Local Starage   localStorage.getItem('auth-token');

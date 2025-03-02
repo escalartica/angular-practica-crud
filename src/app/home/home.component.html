@@ -1,14 +1,10 @@
 <div class="home-container">
-    <!-- home.component.html -->
-<app-breadcrumb></app-breadcrumb> <!-- Asegúrate de agregar esta línea donde desees que aparezca el breadcrumb -->
-<app-crud-table></app-crud-table>
-
     <h1>Bienvenido a la Aplicación de Gestión de Coches</h1>
   
     <!-- Aquí se incluirá el CrudTableComponent (la tabla de coches) -->
     <app-crud-table></app-crud-table>
   
-    <!-- O bien, puedes agregar un enlace al formulario de creación de coches -->
+    <!-- Botón para agregar un coche -->
     <button mat-raised-button [routerLink]="['/create']">Agregar Coche</button>
   </div>
   
