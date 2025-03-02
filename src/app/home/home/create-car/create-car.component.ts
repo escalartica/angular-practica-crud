@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-car',
+  standalone: true,  // Esto lo marca como un componente standalone
   templateUrl: './create-car.component.html',
   styleUrls: ['./create-car.component.css']
 })
