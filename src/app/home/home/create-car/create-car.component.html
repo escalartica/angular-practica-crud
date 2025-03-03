@@ -1,20 +1,53 @@
-<!-- create-car.component.html -->
-<div class="create-car">
-    <h2>Crear Coche</h2>
-    <form (ngSubmit)="crearCoche()">
-      <div>
-        <label for="marca">Marca</label>
-        <input id="marca" [(ngModel)]="coche.marca" name="marca" required>
-      </div>
-      <div>
-        <label for="modelo">Modelo</label>
-        <input id="modelo" [(ngModel)]="coche.modelo" name="modelo" required>
-      </div>
-      <div>
-        <label for="total">Precio</label>
-        <input id="total" [(ngModel)]="coche.total" name="total" type="number" required>
-      </div>
-      <button type="submit">Crear</button>
-    </form>
-  </div>
-  
+<div class="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-lg">
+  <h1 class="text-2xl font-semibold mb-6">Agregar un Nuevo Coche</h1>
+
+  <form (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label for="marca" class="block text-sm font-medium text-gray-700">Marca</label>
+      <input 
+        id="marca" 
+        [(ngModel)]="coche.marca" 
+        name="marca" 
+        type="text" 
+        required 
+        class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" 
+        placeholder="Ej. Toyota"
+      />
+    </div>
+
+    <div>
+      <label for="modelo" class="block text-sm font-medium text-gray-700">Modelo</label>
+      <input 
+        id="modelo" 
+        [(ngModel)]="coche.modelo" 
+        name="modelo" 
+        type="text" 
+        required 
+        class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" 
+        placeholder="Ej. Corolla"
+      />
+    </div>
+
+    <div>
+      <label for="total" class="block text-sm font-medium text-gray-700">Total</label>
+      <input 
+        id="total" 
+        [(ngModel)]="coche.total" 
+        name="total" 
+        type="number" 
+        required 
+        class="mt-1 p-2 w-full border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" 
+        placeholder="Ej. 20000"
+      />
+    </div>
+
+    <div class="flex justify-end">
+      <button 
+        type="submit" 
+        class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

@@ -45,4 +45,25 @@
   .example-menu button:hover {
     background-color: #f1f1f1;
   }
+  table {
+    width: 100%;
+    border: 1px solid black;
+  }
   
+  mat-header-cell, mat-cell {
+    padding: 8px;
+  }
+  .table-container{
+    background-color: rgb(223, 237, 237);
+  }
+  button {
+
+   
+  }
+tbody tr {
+  border-top: 1px solid grey;
+  width: 100%;
+  td {
+
+  }
+}

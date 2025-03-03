@@ -1,32 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-// Importar los componentes
-import { HomeComponent } from './home/home.component'; // Standalone
-import { CreateCarComponent } from './home/home/create-car/create-car.component'; // Standalone
+import { HomeComponent } from './home/home.component';
+import { CreateCarComponent } from './home/home/create-car/create-car.component';
 import { CarDetailComponent } from './home/home/car-detail/car-detail.component';
 import { EditCarComponent } from './home/home/edit-car/edit-car.component';
-import { CrudTableComponent } from './home/home/crud-table/crud-table.component';
 
 const routes: Routes = [
-  // Ruta principal donde se mostrará la tabla de coches (HomeComponent)
-  { path: '', component: HomeComponent },  // Aquí se carga HomeComponent por defecto
-
-  // Ruta para la creación de coches
-  { path: 'create', component: CreateCarComponent },  // Página de creación de coche
-
-  // Ruta para los detalles del coche
-  { path: 'detail/:id', component: CarDetailComponent },  // Muestra los detalles de un coche por ID
-
-  // Ruta para editar un coche
-  { path: 'edit/:id', component: EditCarComponent },  // Editar coche por ID
-
-  // Ruta para mostrar solo la tabla de coches (CRUD)
-  { path: 'crud', component: CrudTableComponent },  // Página de CRUD de coches
+  { path: '', component: HomeComponent },  // Ruta principal (HomeComponent)
+  { path: 'create', component: CreateCarComponent },  // Ruta para crear un coche
+  { path: 'detail/:id', component: CarDetailComponent },  // Ruta para los detalles de un coche
+  { path: 'edit/:id', component: EditCarComponent },  // Ruta para editar un coche
+  { path: '**', redirectTo: '' }  // Redirige a la página principal si no se encuentra la ruta
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],  // Configura las rutas en la aplicación
-  exports: [RouterModule]  // Exporta RouterModule para usar en toda la aplicación
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

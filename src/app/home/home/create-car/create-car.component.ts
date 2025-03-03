@@ -1,20 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';  // Importar FormsModule
 
 @Component({
   selector: 'app-create-car',
-  standalone: true,  // Esto lo marca como un componente standalone
+  standalone: true,
   templateUrl: './create-car.component.html',
-  styleUrls: ['./create-car.component.css']
+  styleUrls: ['./create-car.component.css'],
+  imports: [FormsModule]  // Asegúrate de agregar FormsModule aquí
 })
 export class CreateCarComponent {
-  coche = { marca: '', modelo: '', total: 0 };
+  coche = {
+    marca: '',
+    modelo: '',
+    total: 0
+  };
 
   constructor(private router: Router) {}
 
-  crearCoche() {
-    // Lógica para crear coche (por ejemplo, agregarlo a una lista o hacer una petición a la API)
+  // Método para manejar el envío del formulario
+  onSubmit() {
+    // Aquí puedes agregar la lógica para manejar el coche creado.
     console.log('Coche creado', this.coche);
-    this.router.navigate(['/']); // Redirigir al inicio
+    
+    // Redirigir al inicio o a alguna otra ruta después de guardar el coche
+    this.router.navigate(['/']);
   }
 }

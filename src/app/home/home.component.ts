@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
-import { CrudTableComponent } from './home/crud-table/crud-table.component';  // Importar CrudTableComponent como standalone
-import { RouterModule } from '@angular/router';  // Importamos RouterModule aquí
-import { BreadcrumbComponent } from './home/breadcrumb/breadcrumb.component'; 
-import { MatIconModule } from '@angular/material/icon'; 
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { BreadcrumbComponent } from './home/breadcrumb/breadcrumb.component';
+import { CrudTableComponent } from './home/crud-table/crud-table.component';  // Asegúrate de importar el CrudTableComponent
 
 @Component({
   selector: 'app-home',
+  standalone: true,  // Esto lo marca como un componente standalone
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  standalone: true,  // Especificamos que es un componente standalone
-  imports: [CrudTableComponent, RouterModule, BreadcrumbComponent, MatIconModule, MatToolbarModule]  // Importamos CrudTableComponent aquí
+  imports: [
+    CommonModule, 
+    RouterModule,
+    BreadcrumbComponent,
+    CrudTableComponent,  // Agrega el CrudTableComponent
+  ]
 })
-export class HomeComponent {
-  // Lógica de tu componente Home
+export class HomeComponent implements OnInit {
+
+  ngOnInit(): void {
+    console.log('HomeComponent cargado');
+  }
 }

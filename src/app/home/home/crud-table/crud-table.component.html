@@ -1,43 +1,26 @@
-<!-- Tabla de Material Design -->
-<table mat-table [dataSource]="cars">
-  <!-- Definir las columnas -->
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> ID </th>
-    <td mat-cell *matCellDef="let car"> {{ car.id }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="marca">
-    <th mat-header-cell *matHeaderCellDef> Marca </th>
-    <td mat-cell *matCellDef="let car"> {{ car.marca }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="modelo">
-    <th mat-header-cell *matHeaderCellDef> Modelo </th>
-    <td mat-cell *matCellDef="let car"> {{ car.modelo }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="total">
-    <th mat-header-cell *matHeaderCellDef> Total </th>
-    <td mat-cell *matCellDef="let car"> {{ car.total }} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="acciones">
-    <th mat-header-cell *matHeaderCellDef> Acciones </th>
-    <td mat-cell *matCellDef="let car">
-      <!-- Botón de menú de acción -->
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <!-- Menú contextual con las opciones de acciones -->
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="viewDetails(car.id)">Ver</button>
-        <button mat-menu-item (click)="editCar(car.id)">Editar</button>
-        <button mat-menu-item (click)="deleteCar(car.id)">Eliminar</button>
-      </mat-menu>
-    </td>
-  </ng-container>
-
-  <!-- Definir la fila de cabecera y las filas de la tabla -->
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="table-container p-4">
+  <h1 class="text-2xl font-bold mb-4">Lista de Coches</h1>
+  <table class="min-w-full table-auto border-collapse bg-white shadow-md rounded-lg overflow-hidden">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="py-2 px-4 text-left text-sm font-semibold text-gray-700 border-b">ID</th>
+        <th class="py-2 px-4 text-left text-sm font-semibold text-gray-700 border-b">Marca</th>
+        <th class="py-2 px-4 text-left text-sm font-semibold text-gray-700 border-b">Modelo</th>
+        <th class="py-2 px-4 text-left text-sm font-semibold text-gray-700 border-b">Total</th>
+        <th class="py-2 px-4 text-left text-sm font-semibold text-gray-700 border-b">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars" class="border-b hover:bg-gray-50">
+        <td class="py-2 px-4 text-sm text-gray-800">{{ car.id }}</td>
+        <td class="py-2 px-4 text-sm text-gray-800">{{ car.marca }}</td>
+        <td class="py-2 px-4 text-sm text-gray-800">{{ car.modelo }}</td>
+        <td class="py-2 px-4 text-sm text-gray-800">{{ car.total }}</td>
+        <td class="py-2 px-4 text-sm">
+          <button (click)="editCar(car.id)" class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600 focus:outline-none">Edit</button>
+          <button (click)="deleteCar(car.id)" class="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600 focus:outline-none ml-2">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
